@@ -1,0 +1,8 @@
+.todolist-frame {
+    width: 30em;
+    height: 38em;
+    border: 2px solid #bbb;
+    background-color: whitesmoke;
+    box-shadow: 10px 10px grey;
+    margin: auto
+}
