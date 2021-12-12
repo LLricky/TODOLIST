@@ -28,9 +28,22 @@ body {
 
 .input-part {
     display: flex;
-    margin: 5px 1em;
+    padding: 5px 1em;
 }
 
 .input-part>input {
-    flex: 1;
+    flex: 1 1 8em;
+}
+
+.todo-item {
+    display: flex;
+    padding: 4px;
+}
+
+.todo-item>.item-title {
+    flex: 1 1 8em;
+}
+
+.list {
+    padding: 3px 0.5em;
 }
