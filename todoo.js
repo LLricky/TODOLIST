@@ -1,6 +1,4 @@
-let todoItems = [
-
-];
+let todoItems = [];
 let finishedItems = [];
 
 //输出待办事项列表
@@ -23,8 +21,14 @@ function renderTodoItemslist(todoItems, finishedItems) {
             renderTodoItemslist(todoItems, finishedItems)
         })
 
-        let titleEl = document.createElement('div')
+        let titleEl = document.createElement('input')
         titleEl.className = 'item-title'
+        titleEl.addEventListener('change', (e) => {
+
+            todoItems[i].title = titleEl.value;
+            renderTodoItemslist(todoItems, finishedItems)
+        })
+
 
         let importantEl = document.createElement('button')
         importantEl.id = 'fire'
@@ -52,8 +56,13 @@ function renderTodoItemslist(todoItems, finishedItems) {
 
         let deleteEl = document.createElement('div')
         deleteEl.innerHTML = '<button>❌</button>'
+        deleteEl.addEventListener('click', (e) => {
+            todoItems.splice(i, 1);
+            renderTodoItemslist(todoItems, finishedItems)
 
-        titleEl.innerText = item.title;
+        })
+
+        titleEl.value = item.title;
 
         listEle.append(itemDiv)
 
@@ -83,8 +92,9 @@ function renderFinishedItemslist(finishedItems) {
 
 
 
-        let titleEl = document.createElement('div')
+        let titleEl = document.createElement('input')
         titleEl.className = 'item-title'
+
 
         let importantEl = document.createElement('button')
         importantEl.id = 'fire'
@@ -96,8 +106,13 @@ function renderFinishedItemslist(finishedItems) {
 
         let deleteEl = document.createElement('div')
         deleteEl.innerHTML = '<button>❌</button>'
+        deleteEl.addEventListener('click', (e) => {
+            finishedItems.splice(i, 1);
+            renderFinishedItemslist(finishedItems)
 
-        titleEl.innerText = item.title;
+        })
+
+        titleEl.value = item.title;
 
         listEle.append(itemDiv)
 
